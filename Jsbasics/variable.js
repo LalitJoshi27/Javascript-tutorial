@@ -16,3 +16,4 @@ If we will not define any variable in javascript it will not give any error but 
 Prefer not to use var to declare a variable in javascript because of block scope & functional scope
 Use let to declare a variable in Javascript
 */
+console.table([Account,accountEmail,accountPassword,account])
