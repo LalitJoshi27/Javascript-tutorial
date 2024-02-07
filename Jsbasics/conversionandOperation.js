@@ -12,3 +12,15 @@ console.log(booleanisLoggedIn)
 let stringval= String(age)
 console.log(stringval)
 console.log(typeof stringval)
+//  Operation //
+let value =15
+let negvalue= -value
+console.log(negvalue)
+console.log(2+2)
+console.log(2*2)
+console.log(2**3)// this is used for power
+console.log(2%4)
+console.log(typeof("2"+ 2))
+console.log(typeof(2+"2"))
+console.log("1"+2+2)
+console.log(typeof(2+2+"1"+1+1))
