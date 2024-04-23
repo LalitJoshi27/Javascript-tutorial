@@ -87,3 +87,4 @@ const mycoding=[
 mycoding.forEach((item)=>{
    console.log(item.LangName); // Method to access the object value inside for each loop
 })
+// ForEach method dosen't return anything
