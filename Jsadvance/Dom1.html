@@ -12,8 +12,54 @@
 <body class="Lalit">
     <div>
         <h1 id="title" class="Joshi">Lalit Joshi</h1>
+        <h2>Lorem ipsum dolor sit amet consectetur</h2>
         <p>Lorem ipsum dolor sit amet.</p>
     </div>
     <h1></h1>
+    <ul>
+        <li>One</li>
+        <li>Two</li>
+        <li>Three</li>
+    </ul>
+   
 </body>
 </html>
+<!--  $$$$  document.getElementById(): This method is used for accesing the content of any Id.
+      we can use document.getElementByClassName(),tagName(),Name().
+*for ex:
+Here h1 tag id name is title 
+ document.getElementById("title")
+***** how to Use Style tag using document.getElementById() or other
+ const title= document.getElementById("title")
+ !! Now we can directle access value using title variable
+  For Ex:
+      title.style.color="Red";
+      [ It will Change the colour of the text in the title Lalit Joshi in Red]
+      All styleing we can done with this style tag like padding margin border radius etc.........
+ 
+   !!!!!!!!!!!!!! textContent, InnerHTML, innerText!!!!!!!!!!!!!!!!!!!!!!!
+   title.textContent: This will provide the text content inside any tag.
+   title.innerText: This will also provide the text content inside the tag
+   " The Main diff between innerText and textContent is that :
+       innerText will not provide the hidden Text 
+       textContent will provide all the text if any text is hidden.
+       ForEx:<h1>LalitJoshi<span style="display:none">How are you</span></h1>
+       const title= document.getElementByTagName("h1")
+       title.innerText = Output is LalitJoshi
+       title.textContent= Output is Lalit JoshiHow are You
+   "
+   title.innerHTML: This is also used acess the content of tag id class
+   This will provide all the html we have written inside any tag if we have hide the data
+      ForEx:<h1>LalitJoshi<span style="display:none">How are you</span></h1>
+       const title= document.getElementByTagName("h1")
+       title.innerHTML = Output is LalitJoshi <span style="display:none">How are you</span>
+
+    ****************************** QuerySelector ****************************************
+    document.querySelector("h1") // This will select the content of h1 tag
+     document.querySelector("#title")
+      document.querySelector(".Joshi")
+       document.querySelector("input[type="Password"]")
+        document.querySelector("p:first-child")
+        const change= document.querySelector("li")
+        change.style.color="Red"  
+              -->
