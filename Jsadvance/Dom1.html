@@ -17,9 +17,9 @@
     </div>
     <h1></h1>
     <ul>
-        <li>One</li>
-        <li>Two</li>
-        <li>Three</li>
+        <li class="listItem">One</li>
+        <li class="listItem">Two</li>
+        <li class="listItem">Three</li>
     </ul>
    
 </body>
@@ -61,5 +61,15 @@ Here h1 tag id name is title
        document.querySelector("input[type="Password"]")
         document.querySelector("p:first-child")
         const change= document.querySelector("li")
-        change.style.color="Red"  
+        change.style.color="Red" 
+    **************************QuerySelectorAll***********************
+     const templist= document.querySelectorAll("li")
+     // It will return a nodelist (not an array)
+     // we can perform operation in nodelist but not directly 
+      if we want to apply style in nodelist we have to specify the index 
+      like: templist[0].style.color= 'Red';
+      This provide only forEach().
+
+      ************************ HTML Collection**********************888
+      document.getElementByClassName("listItem")
               -->

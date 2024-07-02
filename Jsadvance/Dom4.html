@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body background="black"; color="white";>
+    <ul class="language">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JS</li>
+    </ul>
+    <script>
+        function addLanguage(langName){
+            const create= document.createElement("li") // document.createElement method is used to create an element using Dom. we pass the tag name which we cant to create in the html page
+            create.innerHTML=`${langName}` // This is used to add text in the tag
+            document.querySelector(".language").appendChild(create) // This is the main method that append or add the element in the related class, Id or any fiels where we want to show the data.
+        }
+        addLanguage("Java")
+        
+        function addOptLang(langName){
+            const create1= document.createElement("li")
+            create1.appendChild(document.createTextNode(langName)) // In this document.createTextNode() will create the textNode where text will be passed and the create1.appendChild will add this text with tag or elememt which we have created. This method is optimized way to crate element using Dom. 
+            document.querySelector(".language").appendChild(create1)
+        }
+        addOptLang("Python")
+        function changeColor(langname,color){
+            const text= document.createElement("li")
+            text.innerHTML=`${langname}`
+            text.style.color=`${color}`
+            document.querySelector(".language").appendChild(text)
+        }
+        changeColor("React","blue")
+        function addTextColor(heading,color){
+            const text= document.createElement("h1")
+            text.innerHTML=`${heading}`
+            text.style.color=`${color}`
+            text.style.backgroundColor="red"
+            document.querySelector("body").appendChild(text)
+        }
+        addTextColor("It's Me Lalit","Green")
+        function addTextCol(langName,color){
+            const text= document.createElement("li")
+            text.appendChild(document.createTextNode(langName))
+            text.style.color=`${color}`
+            document.querySelector(".language").appendChild(text)
+        }
+        addTextCol("PHP","Red")
+     // Edit:
+     // 1st Approach
+     const secondLang=document.querySelector("li:nth-child(2)")
+     secondLang.innerHTML="Mojo"
+     // Second Approach:
+     const newElement= document.createElement("li")
+     newElement.textContent="mojo"
+     secondLang.replaceWith(newElement)
+     // Third
+     const firstLang= document.querySelector("li:first-child")
+     firstLang.outerHTML="<li>TypeScript</li>"
+     // Remove 
+     const lastLang= document.querySelector("li:last-child")
+     lastLang.remove()
+    </script>
+</body>
+</html>
