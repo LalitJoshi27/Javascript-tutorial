@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="Lalit" style="height: 300px;width: 300px; background-color: black;">
+    </div>
+    <div id="count">
+    </div>
+    <button id="ShowImage">ShowImage</button>
+    <button id="HideImage">HideImage</button>
+    <button id="ShowFollower">ShowFollower</button>
+    <button id="HideFollower">HideFollower</button>
+    <script>
+        const reqURL="https://api.github.com/users/hiteshchoudhary"
+       const xhr= new XMLHttpRequest();
+       xhr.open("GET",reqURL)
+       xhr.onreadystatechange= function(){
+        console.log(xhr.readyState);
+        if(xhr.readyState===4){
+            const data=JSON.parse(this.responseText); //JSON.parse is to convert string into JSON
+            console.log(this.responseText);
+            const followers= data.followers;
+           const url=data.avatar_url
+           const Inner= `<img src="${url}" height="300" width="300">`
+          document.querySelector("#ShowImage").addEventListener("click",function () {
+            document.querySelector("#Lalit").innerHTML=Inner
+          })
+
+          document.getElementById("ShowFollower").addEventListener("click",function(){
+            document.getElementById("count").innerText=followers
+          })
+          document.querySelector("#HideImage").addEventListener("click",function(){
+            document.querySelector("#Lalit").innerHTML="";
+          })
+          document.querySelector("#HideFollower").addEventListener("click",function(){
+            document.querySelector("#count").innerHTML="";
+          })
+          
+           
+                }
+       }
+       xhr.send(); // It is used to call open method
+        </script>
+</body>
+</html>

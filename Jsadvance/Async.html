@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <!--  // Javascript: for default behaviour
+           1: Synchronous
+           2: Single Threaded
+
+  // Execution Context:
+ // execute one line of code at a time
+
+ // Blocking Code vs Non Blocking Code
+// Block the flow of program     
+  //Does not block the execution flow-->
+  <h1>Lalit Joshi</h1>
+  <button id="stop">Stop</button>
+  <script>
+    setTimeout(function(){
+        console.log("Lalit");
+    },2000)
+    const lalit=function(){
+        console.log("LalitJoshi");
+    }
+    setTimeout(lalit,2000)
+    const changeText= function(){
+        document.querySelector("h1").innerHTML="HE IS THE BEST"
+    }
+    const changeme=setTimeout(changeText,2000)
+    // SetTimeout()
+    // SetInterval()
+    // clearTimeout()
+    document.querySelector("#stop").addEventListener("click",function(){
+       clearTimeout(changeme)
+    })
+
+  </script>
+</body>
+</html>
