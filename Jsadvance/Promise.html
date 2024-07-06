@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!--// Promise is an object that represents eventual completion or rejection
+    // 3states:
+    // 1 : Pending
+    // 2 : Fullfilled
+    // 3 : Rejected -->
+    <script>
+        const promiseOne = new Promise(function(resolve,reject){
+                  // Do any async task
+                  setTimeout(function(){
+                 console.log("Async task is complete")
+                  },1000)    
+                  resolve()
+        })
+        promiseOne.then(function(){
+            console.log("Promise Consumed");
+        })
+        new Promise(function(resolve,reject){
+            setTimeout(function(){
+                console.log("Async Task2");
+                rsolve()
+            },1000)
+        }).then(function(){
+            console.log("Async task 2 resolved");
+        })
+        const promiseThree= new Promise(function(resolve,resolve){
+            setTimeout(function(){
+                       resolve({username:"Chai",email:"Lalit@example.com"})
+            },1000)
+        })
+        promiseThree.then(function(user){
+            console.log(user);
+        })
+        const PromiseFour= new Promise(function(resolve,reject){
+            setTimeout(function(){
+                let error = false;
+                if(!error){
+                    resolve({username:"Lalit",password:"Lalit@123"})
+                }
+                else{
+                    reject("Error: Something Went Wrong")
+                }
+            },1000)
+        })
+        PromiseFour
+        .then((user)=>{
+              console.log(user);
+              return user.username
+        }).then((username)=>{
+            console.log(username);
+        }).catch(function(error){
+                console.log(error);
+        }).finally(()=>{
+            console.log("The Promise is either Resolved or Rejected");
+        })
+        const promisFive= new Promise(function(resolve,reject){
+            setTimeout(function(){
+            let error= true
+            if(!error){
+                resolve({username:"Lalit",password:"Lalit@123"})
+            }
+            else{
+                reject("Error Js Error")
+            }
+        },1000)
+        })
+        async function consumePromiseFive(){
+            try{
+            const response=await promisFive
+            console.log(response);
+            }
+            catch(error){
+                console.log(error);
+            }
+        }
+        consumePromiseFive()
+        async function getAllUser(){
+           try{
+           const response=await fetch("https://api.github.com/users/hiteshchoudhary")
+           const data= response.json()
+           console.log(data);
+           }
+           catch(error){
+            console.log("Error",error);
+           }
+       }
+       getAllUser()
+        </script>
+
+</body>
+</html>
