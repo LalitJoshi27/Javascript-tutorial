@@ -17,7 +17,7 @@ let isLoggedIn= false //boolean
 
 console.log(typeof(age))
 console.log(typeof null)// type of null is object
-console.log(typeof undefined)// type of null is undefined
+console.log(typeof undefined)// type of undefined is undefined
 //2 type of data types:
 // 1.Primitive Data types
 
