@@ -39,10 +39,11 @@ console.log(CalculateCart(15,12,18)) //if we want all of the value in an array w
 function handleObject(anyobject){
     console.log(`Username is ${anyobject.Username} Price is ${anyobject.Price}`)
 }
-handleObject({
+const anyobject={
     Username:"Lalit",// here we can pass an object which can created earlier
     Price:50000
-})
+}
+handleObject(anyobject)
 
 // Passing Array in function
 const myArray= [10,20,30,40]
